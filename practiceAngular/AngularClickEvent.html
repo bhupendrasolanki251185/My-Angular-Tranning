@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="js/AngularClickEvent.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body ng-app="myApp">
+		<div ng-controller="cntrller">
+			<div><h3>ng-click Directive</h3></div>
+			<table>
+				<thead>
+					<tr>
+						<th>Technologies</th>
+						<th>Likes</th>
+						<th>Dislikes</th>
+						<th>Likes/Dislikes</th>
+						<th>Average</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="technology in technologies">
+						<td>{{technology.name}}</td>
+						<td>{{technology.like}}</td>
+						<td>{{technology.dislike}}</td>
+						<td>
+							<input type="button" value="like" ng-click="likeTechnology(technology)">
+							<input type="button" value="dislike" ng-click="dislikeTechnology(technology)">
+						</td>
+						<td>{{averageStatus}}</td>
+					</tr>	
+				</tbody>
+			</table>
+		</div>	
+	</body>
+</html>

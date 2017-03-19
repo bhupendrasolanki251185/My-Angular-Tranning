@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shopping Cart</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="lib/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="script/main.js"></script>
+	<script type="text/javascript" src="script/calcservice.js"></script>
+
+</head>
+<body>
+	<div ng-app="myCalcApp" ng-controller="myCalcController">
+		{{name}}
+
+		<div id="calculator">
+			<!-- Screen and clear key -->
+			<div class="top">
+				<span class="clear">C</span>
+				<div class="screen">{{strText}}</div>
+				<!-- <textarea class="screen" ngModel="strText" name="screen" required ngRequired="string" ngMinlength="1" ngMaxlength="10"></textarea> -->
+			</div>
+
+			<div class="keys">
+				<!-- operators and other keys -->
+				<span class="spanNum" ng-click="showNumber(7)">7</span>
+				<span class="spanNum" ng-click="showNumber(8)">8</span>
+				<span class="spanNum" ng-click="showNumber(9)">9</span>
+
+				<span class="operator" ng-click="performOperation('+')">+</span>
+
+				<span class="spanNum" ng-click="showNumber(4)">4</span>
+				<span class="spanNum" ng-click="showNumber(5)">5</span>
+				<span class="spanNum" ng-click="showNumber(6)">6</span>
+
+				<span class="operator" ng-click="performOperation('-')">-</span>
+
+				<span class="spanNum" ng-click="showNumber(1)">1</span>
+				<span class="spanNum" ng-click="showNumber(2)">2</span>
+				<span class="spanNum" ng-click="showNumber(3)">3</span>
+
+				<span class="operator" ng-click="performOperation('÷')">÷</span>
+
+				<span class="spanNum" ng-click="showNumber(0)">0</span>
+				<span>.</span>
+				<span class="eval" ng-click="showOnEqualOperator()">=</span>
+				<span class="operator" ng-click="performOperation('x')">x</span>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

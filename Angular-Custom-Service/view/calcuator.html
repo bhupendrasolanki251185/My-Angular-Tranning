@@ -1,0 +1,34 @@
+<div id="calculator">
+	<!-- Screen and clear key -->
+	<div class="top">
+		<span class="clear">C</span>
+		<div class="screen">{{strText}}</div>
+		<!-- <textarea class="screen" ngModel="strText" name="screen" required ngRequired="string" ngMinlength="1" ngMaxlength="10"></textarea> -->
+	</div>
+
+	<div class="keys">
+		<!-- operators and other keys -->
+		<span class="spanNum" ng-click="showNumber(7)">7</span>
+		<span class="spanNum" ng-click="showNumber(8)">8</span>
+		<span class="spanNum" ng-click="showNumber(9)">9</span>
+
+		<span class="operator" ng-click="performOperation('+')">+</span>
+
+		<span class="spanNum" ng-click="showNumber(4)">4</span>
+		<span class="spanNum" ng-click="showNumber(5)">5</span>
+		<span class="spanNum" ng-click="showNumber(6)">6</span>
+
+		<span class="operator" ng-click="performOperation('-')">-</span>
+
+		<span class="spanNum" ng-click="showNumber(1)">1</span>
+		<span class="spanNum" ng-click="showNumber(2)">2</span>
+		<span class="spanNum" ng-click="showNumber(3)">3</span>
+
+		<span class="operator" ng-click="performOperation('÷')">÷</span>
+
+		<span class="spanNum" ng-click="showNumber(0)">0</span>
+		<span>.</span>
+		<span class="eval" ng-click="showOnEqualOperator()">=</span>
+		<span class="operator" ng-click="performOperation('x')">x</span>
+	</div>
+</div>

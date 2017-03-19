@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Http Get</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+<script>
+ var App=angular.module("MyApp",[]);
+ App.controller("ctrl",function($scope,$http)
+ {
+	 $http.get("fetch.php")
+	 .success(function(data)
+	 {
+		 console.log(data);
+		$scope.data=data; 
+	 })
+ })
+</script>
+</head>
+<body ng-app="MyApp" ng-controller="ctrl">
+
+<h1 align="center"> Employess Name </h1>
+<div>
+  <ul ng-repeat="d in data">
+  <li>{{d.name}}</li>
+  </ul>
+</div>
+</body>
+</html>

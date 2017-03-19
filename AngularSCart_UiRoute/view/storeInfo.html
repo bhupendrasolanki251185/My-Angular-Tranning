@@ -1,0 +1,35 @@
+<div class="divTableView">
+	<div style="margin-left: 25px;">
+		<span>Search Item:- </span>
+		<input type="text" name="" ng-model="search.item">
+		<span> Show Rows:- </span>
+		<input type="number" name="quantity" min="1" ng-model="limit">
+	</div>
+<br>Specification:--<div ui-view></div></br>
+
+	<table class="table-bordered ">
+		<caption>Store Data</caption>
+		<tbody>
+			<tr class="well">
+				<td colspan="4" style="text-align: right;" class="linkButton">
+				 <a ui-sref="addtocart"> {{itemCount + " Items Rs. " + itemValue}}</a>
+				</td>
+			</tr>
+			<tr ng-repeat="obj in storeData.products | filter:search | limitTo:limit">
+				<td><img ng-src="assets/images/{{obj.image}}.jpg" alt="{{obj.image}}"></td>
+				<td><a 
+					ui-sref="itemview" 
+					class="linkButton">
+					{{obj.item}}
+					</a> 
+
+					<a ui-sref=".specific">Specification</a>
+					<a ui-sref=".cost">Specification</a>
+					<br> {{obj.description}}</td>
+				<td>{{obj.item1 | currency:"Rs."}}</td>
+				<td class="linkButton" ng-click="addToCart(obj.item1)">add to cart</td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+
+<TITLE>NgRepeat Example</TITLE>
+<script src="js/angular.js"></script>
+<script src="js/CustomNgRepeat.js"></script>
+
+<style>
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+
+
+</HEAD>
+<body ng-app="myApp"  ng-controller="myCtrl"   bgcolor="CYAN">
+
+
+<h1>Weclocome to Ng-Repeat Example</h1>
+<br/><br/>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Qualifcation</th>
+<th>School</th>
+
+</tr>
+
+<thead>
+
+<tbody>
+
+<tr ng-repeat="emp in employees">  
+
+<td>{{emp.name}}</td>
+<td>{{emp.age}}</td>
+<td>{{emp.Qualifcation}}</td>
+<td>{{emp.School}}</td>
+</tr>
+
+</tbody>
+
+
+
+
+</table>
+
+</body>
+
+
+</HTML>

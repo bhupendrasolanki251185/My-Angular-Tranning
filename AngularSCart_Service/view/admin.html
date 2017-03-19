@@ -1,0 +1,35 @@
+<div class="mainAdmin">
+
+	<div class="btnBar">
+	<div class="divButtons" ng-click="addData()">Add</div>
+	<div class="divButtons">Update</div>
+	<div class="divButtons">Delete</div>
+
+	</div>
+	<div class="divTableView" style="margin-top: 20px;">
+		<table class="table-bordered ">
+		<caption><h3>Store Data Information</h3></caption>
+		<tbody>
+		<thead>
+			<tr>
+				<td></td>
+				<td>Image</td>
+				<td>Item</td>
+				<td>Description</td>
+				<td>Price</td>
+				<td>Specification</td>
+			</tr>
+		</thead>
+			<tr ng-repeat="value in storeAdminData">
+				<td><input type="checkbox" ></td>
+				<td>{{value.image}}</td>
+				<td>{{value.item}}</td>
+				<td>{{value.description}}</td>
+				<td>{{value.item1}}</td>
+				<td>{{value.specfication}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+
+</div>

@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>Welcome to First Routing Tutorial </TITLE>
+<script src="js/angular.js"></script>
+<script src="js/ui_router.js"></script>
+<script src="js/app_new.js"></script>
+<script src="js/router.js"></script>
+
+
+</HEAD>
+<BODY  bgcolor="GREEN"   ng-app="myApp"  ng-controller="MyController">
+<H2>This Page Includes Routing Links</H2>
+{{welcomeMessage}}
+
+<ul>
+<li><a href="/#">About</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#/courses">Courses</a></li>
+</ul>
+ <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+
+ <loginPage></loginPage>
+ <div loginPage></div>
+ <div class="loginPage"></div>
+<!-- directivie-loginPage -->
+
+ <input type="text">
+  
+ <section>
+  	<ng-view></ng-view>
+
+  </section>
+  
+  	
+
+
+
+
+</BODY>
+</HTML>

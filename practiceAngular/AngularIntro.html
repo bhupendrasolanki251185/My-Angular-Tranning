@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>AngularIntro</title>
+		<meta name="description" content="">
+		<meta name="author" content="bhupendra.solanki">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>Angular Intro</h1>
+			</header>
+			
+			<div ng-app="">
+				<p> Name: <input type="text" ng-model="name" /></p>
+				<p ng-bind="name"></p>
+				<div data-ng-init="firstName='John'">
+					<p>The name is <span data-ng-bind="firstName"></span></p>
+				</div>
+				<p>My first expression: {{ 5 + 5 }}</p>
+				<p> Name: <input type="text" ng-model="nameExp" /></p>
+				<p>{{nameExp}}</p>
+			</div>
+		</div>
+	</body>
+</html>

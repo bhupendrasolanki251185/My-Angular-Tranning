@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>AngularModule</title>
+		<meta name="description" content="">
+		<meta name="author" content="bhupendra.solanki">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="js/myController.js"></script>
+	</head>
+
+	<body ng-app="myModule">
+		<div ng-controller="myCrl">
+			<div>
+				First Name : {{ employeInfo.firstName }}
+			</div>
+			<div>
+				Last Name : {{ employeInfo.lastName}}
+			</div>
+			<div>
+				Gender : {{employeInfo.gender}}
+			</div>
+			<div>
+				<img ng-src="{{employeInfo.imgPath}}" style="width:100px; height:100px" alt="{{employeInfo.imgName}}"/>
+			</div>
+			<!-- ======================= Two way binding. As model changes view update and vis-versa =============== -->
+			<div><h3>Two way binding. As model changes view update and vis-versa</h3></div>
+			<div>
+				<input type="text" ng-model= message>
+					{{message}}
+
+				<input type="text" ng-model= greeting>
+					{{greeting}}	
+			</div>
+
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td> <input type="text" ng-model=employeInfo.firstName></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td> <input type="text" ng-model=employeInfo.lastName></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td> <input type="text" ng-model=employeInfo.gender></td>
+				</tr>
+			</table>
+			<!-- ======================================================================== -->
+
+			<!-- ======================= ng-repeat Directive =============== -->
+			<div><h3>ng-repeat Directive</h3></div>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Gender</th>
+						<th>Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.firstName}}</td>
+						<td>{{employee.lastName}}</td>
+						<td>{{employee.gender}}</td>
+						<td>{{employee.salary}}</td>
+					</tr>	
+				</tbody>
+			</table>
+			<div><h3>Nested ng-repeat Directive</h3></div>
+			<ul>
+				<li ng-repeat="country in countries">
+					{{country.name}} - Index = {{$index}}
+					<ul>
+						<li ng-repeat="city in country.cities">
+							{{city.name}} - ParentIndex = {{$parent.$index + ' === Index ' + $index}}
+						</li>	
+					</ul>
+				</li>	
+			</ul>	
+
+
+			<!-- ======================================================================== -->
+		</div>
+	</body>
+</html>
